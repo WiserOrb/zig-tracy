@@ -1,7 +1,7 @@
 .{
     .name = .zig_tracy,
-    .version = "0.0.3",
-    .minimum_zig_version = "0.14.0",
+    .version = "0.1.0",
+    .minimum_zig_version = "0.15.1",
     .fingerprint = 0x1c9150cfdc29e7e7,
     .paths = .{
         "build.zig",
@@ -13,8 +13,8 @@
     },
     .dependencies = .{
         .tracy_src = .{
-            .url = "git+https://github.com/wolfpld/tracy#v0.11.1",
-            .hash = "N-V-__8AAMeOlQEipHjcyu0TCftdAi9AQe7EXUDJOoVe0k-t",
+            .url = "git+https://github.com/wolfpld/tracy#v0.12.2",
+            .hash = "N-V-__8AANptPwE8EYOS5w6KRzVyfllpOBthYRcuuQvYhhxb",
         },
     },
 }

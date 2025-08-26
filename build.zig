@@ -67,15 +67,15 @@ pub fn build(b: *std.Build) void {
     });
 
     tracy_module.addIncludePath(tracy_src.path("./public"));
-
-    const tracy_client = if (shared) b.addSharedLibrary(.{
+    
+    
+    const tracy_client = b.addLibrary(.{
+        .linkage = if (shared) .dynamic else .static,
         .name = "tracy",
-        .target = target,
-        .optimize = optimize,
-    }) else b.addStaticLibrary(.{
-        .name = "tracy",
-        .target = target,
-        .optimize = optimize,
+        .root_module = b.createModule(.{
+            .target = target,
+            .optimize = optimize,        
+        }),
     });
 
     if (target.result.os.tag == .windows) {
