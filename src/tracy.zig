@@ -352,7 +352,7 @@ pub const TracingAllocator = struct {
     ) void {
         const self: *Self = @ptrCast(@alignCast(ctx));
 
-        if (options.tracy_enable) {
+        if (options.tracy_enable and buf.len > 0) {
             if (self.pool_name) |name| {
                 c.___tracy_emit_memory_free_named(buf.ptr, 0, name.ptr);
             } else {
